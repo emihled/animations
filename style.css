@@ -1,0 +1,116 @@
+body
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    background-color: #c3be9e;
+}
+
+.Hero-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExODM4b243NjU4OXo3bnZ1N3o2ZGZ1bHhsbmQ3YmNjcnhlN3Z2Ynh2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2jF83vAvri1SE/giphy.gif");
+    background-repeat: no-repeat;
+    image-orientation: from-image;
+    background-size: cover;
+}
+
+.Hero-section h1{
+    font-size: 70px;
+}
+.Card-section{
+   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80vw;
+    margin: 0 auto;
+    padding: 5px;
+    gap: 20px;
+    
+}
+.card {
+    color: #913636;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 280px;
+    box-shadow: 0 0 30px 5px rgba(84, 101, 101, 0.7);
+    transition: box-shadow 0.3s ease-in-out;
+}
+.card img{
+    width: 300px;
+    height: 300px;
+    border-radius: 0 50% 50% 0;
+}
+.card img:hover{
+    width: 300px;
+    height: 300px;
+    border-radius: 50% ;
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    top: -4;
+    left: -4;
+    right: -4;
+    bottom: -4;
+    border-radius: inherit;
+    background: linear-gradient(45deg, #a71717, #8d8233);
+    filter: blur(10px);
+    z-index: 1;
+    animation: glow-animation 5s infinite alternate;
+}
+
+
+@keyframes glow-animation {
+    0% {background-position: 0% 50;}
+    100% {background-position: 100% 50%;}
+}
+
+@keyframes glow-animation {
+    0% {background-position: 100% 50;}
+    100% {background-position: 0% 50%;}
+}
+    
+    .card:hover {
+        box-shadow: 0 0 50px 10px rgba(126, 97, 126, 0.9);
+        transition: box-shadow 0.9s ease-in-out;
+        height: 400px;
+       transform: translateY(-1rem) rotate(360deg);
+       transition: all 1s ease;
+       margin: 30px;
+}
+
+.loader {
+    border: 10px solid #38372e;
+    border-top: 10px solid #a71717;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 3s linear infinite
+    
+}
+
+.loader-cont {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items:center; background-color: #38372e;
+    z-index: 99999;
+    animation: fadeOut 3s linear forwards; pointer-events: none;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; } 100%{ opacity: 0;}
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+    
